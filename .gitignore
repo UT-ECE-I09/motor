@@ -1,0 +1,6 @@
+.DS_Store
+firmware/build/
+__pycache__/
+*.pyc
+logs/
+.vscode/.cortex-debug*
