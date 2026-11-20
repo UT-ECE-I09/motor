@@ -1,5 +1,5 @@
 PYTHON ?= python3
-.PHONY: all clean flash probe console demo test
+.PHONY: all clean flash probe console demo test telemetry telemetry-bench
 all:
 	$(MAKE) -C firmware
 clean:
@@ -14,3 +14,7 @@ demo:
 	$(PYTHON) tools/uart_console.py --demo --log logs/uart-demo.log
 test:
 	$(PYTHON) -m unittest discover -s tests -v
+telemetry:
+	$(PYTHON) telemetry/bridge.py --sim
+telemetry-bench:
+	$(PYTHON) telemetry/bench.py
